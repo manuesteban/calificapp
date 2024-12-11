@@ -1,0 +1,63 @@
+plugins {
+    alias(libs.plugins.androidApplication)
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace 'com.manuel.calificapp'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.manuel.calificapp"
+        minSdk 31
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    // Firebase BOM
+    implementation platform('com.google.firebase:firebase-bom:32.0.0')
+
+    // Usar Firebase Firestore y Firebase Analytics sin especificar la versión
+    implementation 'com.google.firebase:firebase-firestore'
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-database' // Si la estás utilizando
+
+    // Otros dependencias necesarias
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.activity
+    implementation libs.constraintlayout
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+
+    // Multidex (si lo necesitas)
+    implementation 'com.android.support:multidex:1.0.3'
+
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+
+    implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.5'
+    implementation 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
+
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
+
+
+}

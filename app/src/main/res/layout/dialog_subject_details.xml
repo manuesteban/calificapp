@@ -1,0 +1,158 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:elevation="4dp"
+    android:padding="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Nombre de la asignatura -->
+        <TextView
+            android:id="@+id/tv_subject_name_details"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:padding="10dp"
+            android:textColor="@color/dark_green"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Nota máxima -->
+        <TextView
+            android:id="@+id/tv_max_grade"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Nota máxima:"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_subject_name_details" />
+
+        <!-- Título para Evaluaciones -->
+        <TextView
+            android:id="@+id/tv_evaluations_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Evaluaciones:"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_max_grade"
+            android:layout_marginTop="8dp"/>
+
+        <!-- TableLayout para mostrar las evaluaciones -->
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_evaluations_title"
+            android:stretchColumns="1"
+            android:background="@android:color/white"
+            android:divider="@android:color/darker_gray"
+            android:showDividers="middle|end"
+            android:padding="8dp">
+
+            <TableRow
+                android:background="@android:color/darker_gray">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:text="Nombre Evaluación"
+                    android:textStyle="bold"
+                    android:padding="8dp"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Calificación"
+                    android:textStyle="bold"
+                    android:padding="8dp" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Calificación"
+                    android:textStyle="bold"
+                    android:padding="8dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="%"
+                    android:textStyle="bold"
+                    android:padding="8dp" />
+            </TableRow>
+
+            <!-- Aquí se agregarán dinámicamente las filas de evaluación -->
+            <TableRow>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="Evaluación 1" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="9.5" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="95%" />
+            </TableRow>
+        </TableLayout>
+
+        <!-- Mensaje en caso de no haber registros -->
+        <TextView
+            android:id="@+id/tv_no_records"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="No existen registros."
+            android:textColor="@android:color/darker_gray"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tableLayout"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Promedio -->
+        <TextView
+            android:id="@+id/tv_average"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Promedio:"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_no_records"
+            android:layout_marginTop="16dp" />
+
+        <!-- Botón para editar información -->
+        <ImageButton
+            android:id="@+id/btn_edit_subject_details"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="end"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Editar asignatura"
+            android:src="@drawable/ic_edit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_average" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

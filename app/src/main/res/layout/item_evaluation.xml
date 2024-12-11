@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/et_evaluation_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre de la evaluación" />
+
+    <EditText
+        android:id="@+id/et_evaluation_grade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nota" />
+
+    <EditText
+        android:id="@+id/et_evaluation_weight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Peso (%)" />
+
+    <Button
+        android:id="@+id/btn_save_evaluation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guardar evaluación" />
+</LinearLayout>

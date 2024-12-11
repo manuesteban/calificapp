@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/verdeClaro">
+
+    <!-- Botón Volver en la esquina superior derecha -->
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/ic_back"
+    android:background="@android:color/transparent"
+    android:contentDescription="Volver"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/btn_back"
+        android:layout_marginTop="10dp">
+
+        <!-- Nombre de la Asignatura -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre de la asignatura:"
+            android:textColor="@color/blanco"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/et_subject_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingresa el nombre"
+            android:textColorHint="@color/verdePastel"
+            android:padding="10dp"
+            android:background="@drawable/rounded_edittext" />
+
+        <!-- Nota Máxima -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nota máxima:"
+            android:textColor="@color/blanco"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp" />
+
+        <Spinner
+            android:id="@+id/spinner_max_grade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/verdePastel" />
+
+        <!-- Lista de Evaluaciones -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lista de Evaluaciones:"
+            android:textColor="@color/blanco"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp" />
+
+        <TableLayout
+            android:id="@+id/table_evaluations"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/white"
+            android:padding="8dp">
+
+            <!-- Encabezado de la tabla -->
+            <TableRow>
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre"
+                    android:textStyle="bold"
+                    android:textColor="@color/verdeClaro" />
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Calificación"
+                    android:textStyle="bold"
+                    android:textColor="@color/verdeClaro" />
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="(%)"
+                    android:textStyle="bold"
+                    android:textColor="@color/verdeClaro" />
+            </TableRow>
+
+        </TableLayout>
+
+        <!-- Botón para añadir evaluación -->
+        <Button
+            android:id="@+id/btn_add_evaluation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Añadir Evaluación"
+            android:textColor="@color/blanco"
+            android:background="@drawable/rounded_button"
+            android:layout_marginTop="16dp" />
+
+        <!-- Contenedor dinámico de evaluaciones -->
+        <LinearLayout
+            android:id="@+id/layout_evaluations"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp" />
+
+        <!-- Botón para guardar cambios -->
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Guardar Cambios"
+            android:textColor="@color/blanco"
+            android:background="@drawable/rounded_button"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+</RelativeLayout>
